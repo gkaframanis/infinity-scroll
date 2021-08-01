@@ -6,10 +6,9 @@ let imagesLoaded = 0;
 let totalImages = 0;
 let photosArray = [];
 
-
 import {UNSPLASH_ACCESS_KEY} from "./env.js";
 // Unsplash API
-const count = 10;
+const count = 5;
 // Get the Unsplash access key from https://unsplash.com/.
 const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${UNSPLASH_ACCESS_KEY}&count=${count}`;
 
@@ -19,6 +18,9 @@ function imageLoaded() {
     if (imagesLoaded === totalImages) {
         ready = true;
         loader.hidden = true;
+        count = 30;
+        apiUrl = `https://api.unsplash.com/photos/random/?client_id=${UNSPLASH_ACCESS_KEY}&count=${count}`;
+
     }
 };
 
